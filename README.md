@@ -1,3 +1,2 @@
 # scriptware
-some scripts
-e
+some scripts ready for execution
