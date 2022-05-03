@@ -1,0 +1,234 @@
+local guis = game.Players.LocalPlayer.PlayerGui
+
+local hgui = Instance.new("ScreenGui",guis)
+hgui.Name = "MSHub"
+
+local hload = Instance.new("TextLabel",hgui)
+hload.Size = UDim2.new(0,250,0,250)
+hload.Position = UDim2.new(0,1100,0,500)
+hload.Name = "Load"
+hload.Text = "MS Hub Loaded"
+hload.TextScaled = true
+
+wait(2)
+
+guis.MSHub.Load:Destroy()
+
+local hframe = Instance.new("Frame",hgui)
+hframe.Size = UDim2.new(0,250,0,250)
+hframe.Position = UDim2.new(0,1600,0,1100)
+hframe.BackgroundColor3 = Color3.new(50/255,50/255,50/255)
+hframe.Name = "frame1"
+
+local hframe2 = Instance.new("Frame",hgui)
+hframe2.Size = UDim2.new(0,250,0,250)
+hframe2.Position = UDim2.new(0,1600,0,1100)
+hframe2.BackgroundColor3 = Color3.new(50/255,50/255,50/255)
+hframe2.Name = "frame2"
+hframe2.Visible = false
+
+-- buttons
+
+local walkspeedb = Instance.new("TextButton",hframe)
+walkspeedb.Size = UDim2.new(0,50,0,25)
+walkspeedb.Position = UDim2.new(0,0,0,50)
+walkspeedb.Name = "Walkspeed1"
+walkspeedb.Text = "Default Walkspeed"
+walkspeedb.TextScaled = true
+
+local walkspeedb2 = Instance.new("TextButton",hframe)
+walkspeedb2.Size = UDim2.new(0,50,0,25)
+walkspeedb2.Position = UDim2.new(0,0,0,75)
+walkspeedb2.Text = "30 Walkspeed"
+walkspeedb2.TextScaled = true
+walkspeedb2.Name = "Walkspeedb2"
+
+local walkspeedb3 = Instance.new("TextButton",hframe)
+walkspeedb3.Size = UDim2.new(0,50,0,25)
+walkspeedb3.Position = UDim2.new(0,0,0,100)
+walkspeedb3.Text = "60 Walkspeed"
+walkspeedb3.TextScaled = true
+walkspeedb3.Name = "Walkspeedb3"
+
+local jumpb = Instance.new("TextButton",hframe)
+jumpb.Size = UDim2.new(0,50,0,25)
+jumpb.Position = UDim2.new(0,50,0,50)
+jumpb.Text = "Default Jump power"
+jumpb.TextScaled = true
+jumpb.Name = "jumpb1"
+
+local jumpb2 = Instance.new("TextButton",hframe)
+jumpb2.Size = UDim2.new(0,50,0,25)
+jumpb2.Position = UDim2.new(0,50,0,75)
+jumpb2.Text = "100 JP"
+jumpb2.TextScaled = true
+jumpb2.Name = "jumpb2"
+
+local jumpb3 = Instance.new("TextButton",hframe)
+jumpb3.Size = UDim2.new(0,50,0,25)
+jumpb3.Position = UDim2.new(0,50,0,100)
+jumpb3.Text = "200 JP"
+jumpb3.TextScaled = true
+jumpb3.Name = "jumpb3"
+
+-- frame 2 buttons
+
+local defchar = Instance.new("TextButton",hframe2)
+defchar.Size = UDim2.new(0,50,0,25)
+defchar.Text = "Default Character"
+defchar.Name = "defchar"
+defchar.TextScaled = true
+
+local char1 = Instance.new("TextButton",hframe2)
+char1.Size = UDim2.new(0,50,0,25)
+char1.Position = UDim2.new(0,50,0,0)
+char1.Text = "Hip height 0"
+char1.Name = "hheight1"
+char1.TextScaled = true
+
+local char2 = Instance.new("TextButton",hframe2)
+char2.Size = UDim2.new(0,50,0,25)
+char2.Position = UDim2.new(0,50,0,25)
+char2.Text = "Hip height 10"
+char2.Name = "hheight2"
+char2.TextScaled = true
+
+local char3 = Instance.new("TextButton",hframe2)
+char3.Size = UDim2.new(0,50,0,25)
+char3.Position = UDim2.new(0,50,0,50)
+char3.Text = "Hip height 20"
+char3.Name = "hheight3"
+char3.TextScaled = true
+
+-- frame 2 functions
+
+local mhub2 = guis.MSHub.frame2
+
+mhub2.defchar.MouseButton1Up:connect(function()
+	game.Players.LocalPlayer.Character.Humanoid.HipHeight = 2
+end)
+
+mhub2.hheight1.MouseButton1Up:connect(function()
+	game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0
+end)
+
+mhub2.hheight2.MouseButton1Up:connect(function()
+	game.Players.LocalPlayer.Character.Humanoid.HipHeight = 10
+end)
+
+mhub2.hheight3.MouseButton1Up:connect(function()
+	game.Players.LocalPlayer.Character.Humanoid.HipHeight = 20
+end)
+
+--
+-- misc
+local misctitle = Instance.new("TextLabel",hframe)
+misctitle.Size = UDim2.new(0,250,0,25)
+misctitle.Position = UDim2.new(0,0,0,150)
+misctitle.Text = "Misc"
+misctitle.TextScaled = true
+--
+local miscb1 = Instance.new("TextButton",hframe)
+miscb1.Size = UDim2.new(0,50,0,25)
+miscb1.Position = UDim2.new(0,0,0,175)
+miscb1.Text = "Sit"
+miscb1.TextScaled = true
+miscb1.Name = "Sitbutton"
+
+--
+-- tabs
+
+-- tab1
+local tab1 = Instance.new("TextButton",hframe)
+tab1.Size = UDim2.new(0,25,0,10)
+tab1.Position = UDim2.new(0,0,0,240)
+tab1.Text = "1"
+tab1.TextScaled = true
+tab1.Name = "tab1"
+
+local tab2 = Instance.new("TextButton",hframe2)
+tab2.Size = UDim2.new(0,25,0,10)
+tab2.Position = UDim2.new(0,0,0,240)
+tab2.Text = "1"
+tab2.TextScaled = true
+tab2.Name = "tab2"
+--
+--tab 2
+
+local tab3 = Instance.new("TextButton",hframe)
+tab3.Size = UDim2.new(0,25,0,10)
+tab3.Position = UDim2.new(0,25,0,240)
+tab3.Text = "2"
+tab3.TextScaled = true
+tab3.Name = "tab3"
+
+local tab4 = Instance.new("TextButton",hframe2)
+tab4.Size = UDim2.new(0,25,0,10)
+tab4.Position = UDim2.new(0,25,0,240)
+tab4.Text = "2"
+tab4.TextScaled = true
+tab4.Name = "tab4"
+
+
+--
+
+local exitb = Instance.new("TextButton",hframe)
+exitb.Size = UDim2.new(0,50,0,25)
+exitb.Text = "Exit"
+exitb.BackgroundColor3 = Color3.new(500/255,0/255,0/255)
+exitb.TextScaled = true
+exitb.Name = "ExitButton"
+
+local title = Instance.new("TextLabel",hframe)
+title.Position = UDim2.new(0,50,0,0)
+title.Size = UDim2.new(0,200,0,25)
+title.Text = "MS Hub V 0.1 (New)"
+title.Name = "Title"
+title.TextScaled = true
+
+-- functions
+
+local mhub = guis.MSHub.frame1
+
+mhub.tab3.MouseButton1Up:connect(function()
+	mhub2.Visible = true
+	mhub.Visible = false
+end)
+
+mhub2.tab2.MouseButton1Up:connect(function()
+	mhub2.Visible = false
+	mhub.Visible = true
+end)
+
+mhub.Sitbutton.MouseButton1Up:connect(function()
+	game.Players.LocalPlayer.Character.Humanoid.Sit = true
+end)
+
+mhub.jumpb1.MouseButton1Up:connect(function()
+	game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+end)
+
+mhub.jumpb2.MouseButton1Up:connect(function()
+	game.Players.LocalPlayer.Character.Humanoid.JumpPower = 100
+end)
+
+mhub.jumpb3.MouseButton1Up:connect(function()
+	game.Players.LocalPlayer.Character.Humanoid.JumpPower = 200
+end)
+
+mhub.Walkspeedb3.MouseButton1Up:connect(function()
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 60
+end)
+
+mhub.Walkspeedb2.MouseButton1Up:connect(function()
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 30
+end)
+
+mhub.Walkspeed1.MouseButton1Up:connect(function()
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+end)
+
+
+mhub.ExitButton.MouseButton1Up:connect(function()
+	guis.MSHub:Destroy()
+end)
