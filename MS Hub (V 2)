@@ -16,6 +16,9 @@ local round1 = Instance.new("UICorner",hframe)
 local walkspeedb1 = Instance.new("TextButton",hframe)
 walkspeedb1.Size = UDim2.new(0,50,0,25)
 walkspeedb1.Position = UDim2.new(0,10,0,40)
+walkspeedb1.Text = "16 Walkspeed"
+walkspeedb1.TextScaled = true
+walkspeedb1.Name = "WS1"
 
 local round2 = Instance.new("UICorner",walkspeedb1)
 
@@ -29,7 +32,11 @@ exitb.TextScaled = true
 
 local round2 = Instance.new("UICorner",exitb)
 
+local mhub = guis.HackGui.Frame
 
+mhub.WS1.MouseButton1Up:connect(function()
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+end)
 
 guis.HackGui.Frame.Exit.MouseButton1Up:connect(function()
 	guis.HackGui:Destroy()
