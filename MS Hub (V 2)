@@ -1,4 +1,5 @@
 local guis = game.Players.LocalPlayer.PlayerGui
+local startergui = game:GetService("StarterGui")
 
 local hgui = Instance.new("ScreenGui",guis)
 hgui.Name = "HackGui"
@@ -22,6 +23,52 @@ walkspeedb1.Name = "WS1"
 
 local round2 = Instance.new("UICorner",walkspeedb1)
 
+local walkspeedb2 = Instance.new("TextButton",hframe)
+walkspeedb2.Size = UDim2.new(0,50,0,25)
+walkspeedb2.Position = UDim2.new(0,10,0,70)
+walkspeedb2.Text = "30 Walkspeed"
+walkspeedb2.TextScaled = true
+walkspeedb2.Name = "WS2"
+
+local round3 = Instance.new("UICorner",walkspeedb2)
+
+local walkspeedb3 = Instance.new("TextButton",hframe)
+walkspeedb3.Size = UDim2.new(0,50,0,25)
+walkspeedb3.Position = UDim2.new(0,10,0,100)
+walkspeedb3.Text = "60 Walkspeed"
+walkspeedb3.TextScaled = true
+walkspeedb3.Name = "WS3"
+
+local round4 = Instance.new("UICorner",walkspeedb3)
+
+local bgameb = Instance.new("TextButton",hframe)
+bgameb.Size = UDim2.new(0,50,0,25)
+bgameb.Position = UDim2.new(0,10,0,130)
+bgameb.Text = "Minigame"
+bgameb.Name = "boredg"
+bgameb.TextScaled = true
+
+local round5 = Instance.new("UICorner",bgameb)
+
+local boardframe = Instance.new("Frame",hgui)
+boardframe.Size = UDim2.new(0,250,0,250)
+boardframe.Position = UDim2.new(0,500,0,500)
+boardframe.Selectable = true
+boardframe.Draggable = true
+boardframe.Active = true
+boardframe.Visible = false
+boardframe.Name = "Frame2"
+boardframe.BackgroundColor3 = Color3.new(50/255,50/255,50/255)
+
+local bround = Instance.new("UICorner",boardframe)
+
+local text = Instance.new("TextLabel",boardframe)
+text.Text = "work in progress"
+text.Size = UDim2.new(0,250,0,25)
+text.TextScaled = true
+
+local bround2 = Instance.new("UICorner",text)
+
 local exitb = Instance.new("TextButton",hframe)
 exitb.Size = UDim2.new(0,50,0,25)
 exitb.Name = "Exit"
@@ -30,9 +77,21 @@ exitb.BackgroundColor3 = Color3.new(255/255,0/255,0/255)
 exitb.Text = "Exit"
 exitb.TextScaled = true
 
-local round2 = Instance.new("UICorner",exitb)
+local roundexit = Instance.new("UICorner",exitb)
 
 local mhub = guis.HackGui.Frame
+
+mhub.boredg.MouseButton1Up:connect(function()
+	hgui.Frame2.Visible = not hgui.Frame2.Visible
+end)
+
+mhub.WS3.MouseButton1Up:connect(function()
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 60
+end)
+
+mhub.WS2.MouseButton1Up:connect(function()
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 30
+end)
 
 mhub.WS1.MouseButton1Up:connect(function()
 	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
