@@ -2,7 +2,7 @@
 welcome to MS Hub!
 report problems on my youtube videos - https://www.youtube.com/channel/UCVfi7LfYUtBBbT8Z0ZaLZEw
 
-	  (&&&&               &&&&&	*&&&&&&&&&&&&&&&&&&&&&           &&&&             %&&&    *&&&.             &&&%    &&&&&&&&&&&&&&&&&&&         
+		  (&&&&               &&&&&		*&&&&&&&&&&&&&&&&&&&&&           &&&&             %&&&    *&&&.             &&&%    &&&&&&&&&&&&&&&&&&&       
           (&&&&&&,          %&&&&&&    %&&&#                             &&&&             %&&&    *&&&.             &&&%    &&&&            %&&&#     
           (&&&,&&&&&     /&&&&%&&&&   .&&&(                              &&&&             %&&&    *&&&.             &&&%    &&&&             %&&&     
           (&&&   %&&&&*&&&&&   &&&&    &&&&,                             &&&&             %&&&    *&&&.             &&&%    &&&&            /&&&%     
@@ -85,8 +85,25 @@ local text = Instance.new("TextLabel",boardframe)
 text.Text = "work in progress"
 text.Size = UDim2.new(0,250,0,25)
 text.TextScaled = true
+text.Name = "Text"
 
 local bround2 = Instance.new("UICorner",text)
+
+local numtext = Instance.new("TextLabel",boardframe)
+numtext.Position = UDim2.new(0,0,0,50)
+numtext.Size = UDim2.new(0,250,0,50)
+numtext.Text = "0"
+numtext.TextScaled = true
+
+local bround3 = Instance.new("UICorner",numtext)
+
+local numbutton = Instance.new("TextButton",boardframe)
+numbutton.Position = UDim2.new(0,70,0,130)
+numbutton.Size = UDim2.new(0,100,0,70)
+numbutton.Text = "Click for points"
+numbutton.TextScaled = true
+
+local bround4 = Instance.new("UICorner",numbutton)
 
 local exitb = Instance.new("TextButton",hframe)
 exitb.Size = UDim2.new(0,50,0,25)
@@ -99,6 +116,11 @@ exitb.TextScaled = true
 local roundexit = Instance.new("UICorner",exitb)
 
 local mhub = guis.HackGui.Frame
+local mhub2 = guis.HackGui.Frame2
+
+mhub2.TextButton.MouseButton1Up:connect(function()
+	mhub2.TextLabel.Text = mhub2.TextLabel.Text + 1
+end)
 
 mhub.boredg.MouseButton1Up:connect(function()
 	hgui.Frame2.Visible = not hgui.Frame2.Visible
